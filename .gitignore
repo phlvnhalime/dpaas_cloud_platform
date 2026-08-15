@@ -1,0 +1,30 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+**/openrc.sh
+**/openrc.local.sh
+**/clouds.yaml
+**/secure.yaml
+*.pem
+*.key
+id_rsa*
+*.tfvars
+!*.tfvars.example
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+__pycache__/
+*.pyc
+.venv/
+venv/
+openstack-devstack/env/openrc.sh
