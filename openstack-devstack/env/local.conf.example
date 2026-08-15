@@ -1,0 +1,25 @@
+[[local|localrc]]
+# Example only — copy to /opt/stack/devstack/local.conf on the Ubuntu VM.
+# Do not commit a file that contains production secrets.
+
+ADMIN_PASSWORD=secret
+DATABASE_PASSWORD=$ADMIN_PASSWORD
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWORD
+
+# Shared Network IP of the UTM VM (check: ip -4 addr show)
+HOST_IP=192.168.64.4
+
+TARGET_BRANCH=stable/2025.1
+PYTHON3_VERSION=3.11
+
+# Pull neutron-lib from git when pip wheels fight the branch
+LIBS_FROM_GIT=neutron-lib
+
+# Nested ARM / UTM — gre/vxlan tenant nets often break; local works for single-node
+Q_ML2_TENANT_NETWORK_TYPE=local
+
+# No /dev/kvm inside this UTM guest
+LIBVIRT_TYPE=qemu
+# host-passthrough is unsupported on aarch64 QEMU here
+LIBVIRT_CPU_MODE=none
