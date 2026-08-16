@@ -1,6 +1,20 @@
-os_auth_url         = "http://<IPAdress>/identity/v3"
-os_username         = "<os_username>"
-os_password         = "<os_password>"
-os_project_name     = "<os_project_name>"
-os_user_domain_name = "<os_user_domain_name>"
-os_region_name      = "RegionOne"
+# Copy to terraform.tfvars (gitignored) and fill in real values.
+# Never commit terraform.tfvars — it holds secrets.
+
+# --- Auth (sensitive / machine-specific) ---
+os_auth_url            = "http://YOUR_DEVSTACK_IP/identity/v3"
+os_username            = "YOUR_USERNAME"
+os_password            = "YOUR_PASSWORD" # keep secret — matches DevStack ADMIN_PASSWORD
+os_project_name        = "YOUR_PROJECT"
+os_user_domain_name    = "Default"
+os_project_domain_name = "Default"
+os_region_name         = "RegionOne"
+
+# --- Lab resources (safe defaults for local DevStack ARM) ---
+vm_name         = "dpaas-tf-vm"
+image_name      = "cirros-0.6.3-aarch64-disk"
+flavor_name     = "cirros256"
+network_name    = "private"
+keypair_name    = "dpaas-lab-key"
+sg_name         = "dpaas-lab-sg"
+public_key_path = "~/.ssh/dpaas_lab.pub" # path on your Mac; private key stays local
