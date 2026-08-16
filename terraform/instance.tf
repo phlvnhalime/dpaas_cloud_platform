@@ -9,7 +9,7 @@
 resource "openstack_compute_instance_v2" "lab" {
     name = "dpaas-tf-vm"
     image_id = data.openstack_images_image_v2.cirros.id
-    flavor_id = data.openstack_compute_flavor_v2.m1_small.id
+    flavor_id = data.openstack_compute_flavor_v2.small.id
 
     network {
         uuid = data.openstack_networking_network_v2.private.id
