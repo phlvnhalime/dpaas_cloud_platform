@@ -9,7 +9,6 @@ In 30 days, the goal is full-stack ownership of a unified DPaaS product that mer
 | Cloud lab | Local DevStack (UTM Ubuntu ARM64) |
 | Backend API | **Go** |
 | Frontend | **React** |
-| .NET | Parallel learning only (not the main API this month) |
 
 ## Current milestone — Week 1
 
