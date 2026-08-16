@@ -33,9 +33,13 @@ Before Terraform (Days 3–4), prove:
 | [docs/concepts.md](./docs/concepts.md) | Keystone / Nova / Neutron / Glance |
 | [docs/local-devstack-arm-utm.md](./docs/local-devstack-arm-utm.md) | Working lab + recovery |
 | [docs/what-is-devstack.md](./docs/what-is-devstack.md) | DevStack explained simply |
+| [docs/devstack-rebuild-playbook.md](./docs/devstack-rebuild-playbook.md) | If you lose the lab — rebuild with protections |
+| [docs/devstack-scripts-explained.md](./docs/devstack-scripts-explained.md) | Bootstrap + post_fix: every command explained |
 | [env/local.conf.example](./env/local.conf.example) | VM `local.conf` that worked |
 | [scripts/load_env.sh](./scripts/load_env.sh) | Load repo `.env` → `OS_*` |
-| [scripts/health_check.sh](./scripts/health_check.sh) | Automated smoke |
+| [scripts/health_check.sh](./scripts/health_check.sh) | Automated smoke (Mac) |
+| [scripts/devstack_bootstrap.sh](./scripts/devstack_bootstrap.sh) | On VM: clone DevStack + write `local.conf` |
+| [scripts/devstack_post_fix.sh](./scripts/devstack_post_fix.sh) | On VM: ARM/UTM fixes + restart Glance path services + smoke |
 
 ## Cloud ↔ DPaaS link
 
