@@ -27,5 +27,4 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-.tools/
 openstack-devstack/env/openrc.sh
