@@ -1,4 +1,4 @@
 resource "openstack_compute_keypair_v2" "lab" {
-    name = "dpaas-lab-key"
-    public_key = file(pathexpand("~/.ssh/dpaas_lab.pub"))
+    name = var.keypair_name
+    public_key = file(pathexpand(var.public_key_path))
 }

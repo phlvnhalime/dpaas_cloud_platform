@@ -11,7 +11,7 @@
 */
 
 resource "openstack_compute_instance_v2" "lab" {
-    name = "dpaas-tf-vm"
+    name = var.vm_name
     image_id = data.openstack_images_image_v2.cirros.id
     flavor_id = data.openstack_compute_flavor_v2.small.id
     key_pair = openstack_compute_keypair_v2.lab.name

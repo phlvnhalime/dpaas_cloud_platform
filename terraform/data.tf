@@ -3,16 +3,16 @@
     IT IS USED TO GET THE IMAGE, FLAVOR, AND NETWORK.
 */
 data "openstack_images_image_v2" "cirros" {
-    name        = "cirros-0.6.3-aarch64-disk" // The name of the image to get
-    most_recent = true // This will get the most recent image
+    name        = var.image_name
+    most_recent = true
 }
 
 data "openstack_compute_flavor_v2" "small" {
-    name        = "cirros256" // The name of the flavor to get
+    name        = var.flavor_name
 }
 
 data "openstack_networking_network_v2" "private" {
-    name        = "private" // The name of the network to get
+    name        = var.network_name
 }
 
 

@@ -13,7 +13,7 @@
 */
 
 resource "openstack_networking_secgroup_v2" "lab" {
-    name        = "dpaas-lab-sg"
+    name        = var.sg_name
     description = "Lab SG: ICMP + SSH"
 }
 
