@@ -1,0 +1,6 @@
+os_auth_url         = "http://<IPAdress>/identity/v3"
+os_username         = "<os_username>"
+os_password         = "<os_password>"
+os_project_name     = "<os_project_name>"
+os_user_domain_name = "<os_user_domain_name>"
+os_region_name      = "RegionOne"
