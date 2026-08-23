@@ -2,6 +2,16 @@
 
 In 30 days, the goal is full-stack ownership of a unified DPaaS product that merges cloud provisioning with data intelligence — users spin up data environments that sync with live analytics feeds.
 
+**Progress — 2 of 4 weeks done**
+
+```text
+[████████████░░░░░░░░░░░░░░░░]  50%
+Week 1  ████  done
+Week 2  ████  done
+Week 3  ░░░░  next
+Week 4  ░░░░
+```
+
 ## Stack (locked 2026-08-15)
 
 | Layer | Choice |
@@ -35,9 +45,9 @@ openstack server list
 
 Lab guide: [openstack-devstack/docs/local-devstack-arm-utm.md](./openstack-devstack/docs/local-devstack-arm-utm.md)
 
-## Current milestone — Week 2
+## Week 2
 
-Kubernetes + Operator: two-node **kind** cluster, nginx demos, and a `DatabaseInstance` CRD with a Kopf operator that creates/deletes a Pod. Next: **Go** PaaS API + Databricks Bronze.
+Kubernetes + Operator: two-node **kind** cluster, nginx demos, and a `DatabaseInstance` CRD with a Kopf operator that creates/deletes a Pod.
 
 ```bash
 kind create cluster --name dpaas --config k8s/kind-two-node.yaml
@@ -49,11 +59,15 @@ kubectl get dbinst,pods
 
 Operator guide: [k8s/operator/README.md](./k8s/operator/README.md)
 
+## Current milestone — Week 3
+
+**Go** PaaS API + Databricks Bronze.
+
 ## Strike map
 
-| Week | Focus |
-|------|--------|
-| 1 | IaC — OpenStack (DevStack) + Terraform VM |
-| 2 | Kubernetes + Operator |
-| 3 | **Go** PaaS API + Databricks Bronze |
-| 4 | **React** + JWT + Gold + CI/CD |
+| Week | Focus | Status |
+|------|--------|--------|
+| 1 | IaC — OpenStack (DevStack) + Terraform VM | done |
+| 2 | Kubernetes + Operator | done |
+| 3 | **Go** PaaS API + Databricks Bronze | next |
+| 4 | **React** + JWT + Gold + CI/CD | |
