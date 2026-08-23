@@ -1,0 +1,8 @@
+# One Custom Resource (CR) — an instance of DatabaseInstance
+apiVersion: dpaas.example.com/v1
+kind: DatabaseInstance
+metadata:
+  name: halime-db
+spec:
+  size: small
+  owner: halime
