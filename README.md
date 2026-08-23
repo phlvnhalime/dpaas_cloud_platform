@@ -10,9 +10,9 @@ In 30 days, the goal is full-stack ownership of a unified DPaaS product that mer
 | Backend API | **Go** |
 | Frontend | **React** |
 
-## Current milestone — Week 1
+## Week 1
 
-DevStack is healthy; secrets live in **`.env`** (gitignored). Next: Terraform against this lab.
+DevStack is healthy; secrets live in **`.env`** (gitignored). Terraform targets this lab.
 
 ```bash
 # One-time CLI setup on the Mac
@@ -34,6 +34,20 @@ openstack server list
 ```
 
 Lab guide: [openstack-devstack/docs/local-devstack-arm-utm.md](./openstack-devstack/docs/local-devstack-arm-utm.md)
+
+## Current milestone — Week 2
+
+Kubernetes + Operator: two-node **kind** cluster, nginx demos, and a `DatabaseInstance` CRD with a Kopf operator that creates/deletes a Pod. Next: **Go** PaaS API + Databricks Bronze.
+
+```bash
+kind create cluster --name dpaas --config k8s/kind-two-node.yaml
+kubectl apply -f k8s/databaseinstance-crd.yaml
+kubectl apply -f k8s/operator/deploy.yaml
+kubectl apply -f k8s/databaseinstance-halime-db.yaml
+kubectl get dbinst,pods
+```
+
+Operator guide: [k8s/operator/README.md](./k8s/operator/README.md)
 
 ## Strike map
 
