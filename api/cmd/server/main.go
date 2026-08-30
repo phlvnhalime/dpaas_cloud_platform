@@ -6,11 +6,24 @@ import (
 	"net/http"
 )
 
+/*
+w is the response writer
+r is the request
+
+Set: sets the header to the response writer
+Encode: encodes the response writer to the response writer
+
+map  [  string  ]  string
+ |        │          │
+ │        │          └── value type  (what you store)
+ │        └───────────── key type    (how you look it up)
+ └────────────────────── this is a hash table
+*/
 func health(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type","application/json")
 	json.NewEncoder(w).Encode(map[string]string{
-				   								"status":"ok",
-									})
+				                "status":"ok",
+								})
 }
 
 func main() {
@@ -19,6 +32,6 @@ func main() {
 	var err error
 	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println("server failed:", err)
 	}
 }
