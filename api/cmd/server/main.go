@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 )
 
 /*
@@ -19,6 +20,9 @@ map  [  string  ]  string
  │        └───────────── key type    (how you look it up)
  └────────────────────── this is a hash table
 */
+
+
+
 func health(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type","application/json")
 	json.NewEncoder(w).Encode(map[string]string{
@@ -27,10 +31,14 @@ func health(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	http.HandleFunc("/health", health)
-	fmt.Println("listening on:8080")
+	fmt.Println("listening on:", port)
 	var err error
-	err = http.ListenAndServe(":8080", nil)
+	err = http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		fmt.Println("server failed:", err)
 	}
